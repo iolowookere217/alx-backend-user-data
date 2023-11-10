@@ -53,8 +53,8 @@ def not_found(error) -> str:
 
 @app.errorhandler(401)
 def unauthorized_request(error) -> str:
-    '''Unauthorized requests
-    '''
+    """ Unauthorized requests
+    """
 
     return jsonify({
         "error": "Unauthorized"
@@ -63,15 +63,15 @@ def unauthorized_request(error) -> str:
 
 @app.errorhandler(403)
 def forbidden_request(error) -> str:
-    '''Forbidden request
-    '''
+    """ Forbidden request
+    """
 
     return jsonify({
         "error": "Forbidden"
     }), 403
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     host = getenv("API_HOST", "0.0.0.0")
     port = getenv("API_PORT", "5000")
     app.run(host=host, port=port)
